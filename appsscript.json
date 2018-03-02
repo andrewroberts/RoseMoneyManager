@@ -1,0 +1,11 @@
+{
+  "timeZone": "Europe/London",
+  "dependencies": {
+    "libraries": [{
+      "userSymbol": "Log",
+      "libraryId": "1ZDOUyPJ93AeeFavZRoCMDJ2V5hmnXoOgtwiff_0qIUU8gndta40HEC6L",
+      "version": "12"
+    }]
+  },
+  "exceptionLogging": "STACKDRIVER"
+}

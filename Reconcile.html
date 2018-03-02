@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">    
+    <style>
+    
+table {
+  padding: 0 0 20px 0;
+}    
+    
+td {
+  padding: 5px 3px;
+}
+
+  </style>
+  </head>
+  <body>
+    <div id="foundRowNumber" hidden><?= foundRowNumber ?></div>
+    <div id="matchingRowNumber" hidden><?= matchingRowNumber ?></div>
+    <table>'
+      <tr> <?!= foundTxnHtml ?> </tr> 
+      <tr> <?!= matchingTxnHtml ?> </tr>       
+    </table>
+    <button class="blue" onclick="reconcile()">Reconcile</button><button onclick="cancel()">Cancel</button>
+    <script>
+    
+function reconcile() {
+
+  var foundRowNumber = document.getElementById('foundRowNumber').innerHTML
+  var matchingRowNumber = document.getElementById('matchingRowNumber').innerHTML
+  
+  var rowNumbers = {
+    found: foundRowNumber,
+    matching: matchingRowNumber,
+  }
+
+  console.log(rowNumbers)
+  google.script.run.reconcile2Txns(rowNumbers);
+}
+
+function cancel() {
+  google.script.host.close()
+}
+    </script>
+  </body>
+</html>
+
+
